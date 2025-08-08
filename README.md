@@ -11,4 +11,6 @@ once added, now commit the changes using git commit -m "Your Message Here"
 <br>
 once committed, push the changes to the repo by executing git push origin main
 <br>
+git push is a general command to push the changes. origin means the repo from where it has originally been cloned and main means the main branch
+<br>
 Author - Mohammad Anees Khan (cryptlex)
