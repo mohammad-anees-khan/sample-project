@@ -13,6 +13,6 @@ once committed, push the changes to the repo by executing git push origin main
 <br>
 git push is a general command to push the changes. origin means the repo from where it has originally been cloned and main means the main branch
 <br>
-git init: used to initialize the git for a local repo
+git init: used to initialize the git for a local repo, in other words to make a local repo a git repo.
 <br>
 Author - Mohammad Anees Khan (cryptlex)
