@@ -23,4 +23,4 @@ So a typical git workflow would be as:
 4. Commit the changes
 5. push the changes
 <br>
-Author - Mohammad Anees Khan (cryptlex)
+Mohammad Anees Khan (Cryptlex)
