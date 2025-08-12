@@ -32,4 +32,7 @@ checkout to main branch and finally merge using git merge newBranchName followed
 >> To delete a branch, use 'git branch -d branchName'
 <br>
 <br>
+Now after creating and merging pr, in order to fetch the changes locally in the main branch, we can use 'git pull origin main'
+<br>
+<br>
 >Mohammad Anees Khan (Cryptlex)
