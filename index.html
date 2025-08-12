@@ -1,14 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Simple Website — Front End</title>
+  <meta name="description" content="A clean, responsive single-file front-end template.">
+  <style>
+    :root{
+      --bg:#f7fafc; --card:#fff; --accent:#4f46e5; --muted:#6b7280; --radius:12px;
+      --glass: rgba(255,255,255,0.6);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#111;background:linear-gradient(180deg,var(--bg),#eef2ff);-webkit-font-smoothing:antialiased}
+    .container{max-width:1000px;margin:40px auto;padding:20px}
+
+    /* Header / Nav */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav{display:flex;gap:12px}
+    nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:600}
+    nav a.cta{background:var(--accent);color:white}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-top:28px}
+    .card{background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:0 6px 18px rgba(8,15,52,0.06)}
+    h1{margin:0 0 10px;font-size:28px;line-height:1.05}
+    p.lead{margin:0;color:var(--muted)}
+    .cta-row{margin-top:18px;display:flex;gap:10px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-outline{background:transparent;border:1px solid #e6e9f8;color:var(--accent)}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+    .feature{padding:16px;border-radius:10px;background:linear-gradient(180deg,var(--glass),var(--card));backdrop-filter:blur(6px)}
+    .feature h3{margin:8px 0 4px;font-size:16px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Sidebar */
+    .sidebar .stat{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Contact */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6e9f8;font-size:14px}
+    textarea{min-height:100px;resize:vertical}
+
+    /* Footer */
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .features{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      nav{display:none}
+      header{gap:8px}
+      .features{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
-    <h1>First PR from anees</h1>
-    <h1>Second commit on first pr</h1>
-    
-    <h1>Second PR</h1>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <div style="font-weight:700">SimpleSite</div>
+          <div style="font-size:12px;color:var(--muted)">A tiny responsive template</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#">Get started</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>Fast, minimal front-end template</h1>
+        <p class="lead">A lightweight, accessible starting point for small marketing sites, landing pages or prototypes. Fully responsive and easy to customize.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" onclick="scrollToSection('contact')">Start free</button>
+          <button class="btn btn-outline" onclick="alert('Demo: no backend linked')">Live demo</button>
+        </div>
+
+        <div id="features" class="features" style="margin-top:18px">
+          <div class="feature">
+            <div style="font-weight:700">Responsive</div>
+            <p>Looks great on phones, tablets and desktops.</p>
+          </div>
+          <div class="feature">
+            <div style="font-weight:700">Accessible</div>
+            <p>Semantic HTML and keyboard-friendly controls.</p>
+          </div>
+          <div class="feature">
+            <div style="font-weight:700">Customizable</div>
+            <p>Clean CSS and no external dependencies.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card sidebar">
+        <div style="font-weight:700;margin-bottom:8px">Quick info</div>
+        <div class="stat"><span class="small">Users</span><strong>1.2k</strong></div>
+        <div class="stat"><span class="small">Uptime</span><strong>99.99%</strong></div>
+        <div style="height:1px;background:#f1f5f9;margin:12px 0;border-radius:2px"></div>
+        <div class="small">Sign up for updates and tips.</div>
+        <div style="margin-top:12px">
+          <input id="email" placeholder="you@domain.com" aria-label="email">
+          <div style="margin-top:8px"><button class="btn btn-primary" onclick="subscribe()">Subscribe</button></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card" style="margin-top:20px" id="pricing">
+      <h2 style="margin-top:0">Pricing</h2>
+      <p class="small">Simple, predictable pricing. No credit card required for a trial.</p>
+      <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+        <div style="flex:1;min-width:180px;padding:16px;border-radius:10px;background:#f8fafc">
+          <div style="font-weight:700">Free</div>
+          <div class="small">Basic features — forever free</div>
+        </div>
+        <div style="flex:1;min-width:180px;padding:16px;border-radius:10px;background:linear-gradient(180deg,#fff,#eef2ff)">
+          <div style="font-weight:700">Pro</div>
+          <div class="small">Extra features — $9/mo</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:20px" id="contact">
+      <h2 style="margin-top:0">Contact</h2>
+      <form onsubmit="submitForm(event)">
+        <input id="name" placeholder="Your name" required>
+        <input id="email2" placeholder="Email" type="email" required>
+        <textarea id="message" placeholder="How can we help?"></textarea>
+        <div style="display:flex;gap:8px"><button class="btn btn-primary" type="submit">Send message</button><button class="btn" type="button" onclick="document.getElementById('message').value=''">Clear</button></div>
+      </form>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> SimpleSite — Built with ❤️</div>
+      <div style="margin-top:6px">Made for prototyping and learning.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function scrollToSection(id){
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth'});
+    }
+
+    function subscribe(){
+      const email = document.getElementById('email').value.trim();
+      if(!email) return alert('Please enter an email');
+      alert('Thanks! (demo) — ' + email);
+      document.getElementById('email').value = '';
+    }
+
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email2').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email){ alert('Please fill name and email'); return; }
+      // Demo only — replace with fetch() to your backend
+      alert('Message sent!\n' + name + ' — ' + email + '\n\n' + message);
+      e.target.reset();
+    }
+  </script>
 </body>
 </html>
