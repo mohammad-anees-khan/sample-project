@@ -32,4 +32,4 @@ checkout to main branch and finally merge using git merge newBranchName
 >> To delete a branch, use 'git branch -d branchName'
 <br>
 <br>
-> Mohammad Anees Khan (Cryptlex)
+>Mohammad Anees Khan (Cryptlex)
