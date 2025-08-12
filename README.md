@@ -25,4 +25,11 @@ So a typical git workflow would be as:
 <br>
 It will have the pull request created in github which you need to review later to merge it with the master/main branch.
 <br>
-Mohammad Anees Khan (Cryptlex)
+git diff main is used to compare the changes of newBranch with the main branch
+<br>
+and finally merge using git merge main
+<br>
+>> To delete a branch, use 'git branch -d branchName'
+<br>
+<br>
+> Mohammad Anees Khan (Cryptlex)
