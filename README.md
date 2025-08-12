@@ -27,7 +27,7 @@ It will have the pull request created in github which you need to review later t
 <br>
 git diff main is used to compare the changes of newBranch with the main branch
 <br>
-and finally merge using git merge main
+checkout to main branch and finally merge using git merge newBranchName
 <br>
 >> To delete a branch, use 'git branch -d branchName'
 <br>
