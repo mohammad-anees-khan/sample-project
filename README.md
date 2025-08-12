@@ -18,9 +18,11 @@ To used to initialize the git for a local repo, in other words to make a local r
 So a typical git workflow would be as:
 <br>
 1. Clone the repo
-2. Make the changes
-3. Add the changes
+2. Make the branch by executing "git checkout -b branchName"
+3. Make and add the changes
 4. Commit the changes
-5. push the changes
+5. push the changes by git push origin branchName
+<br>
+It will have the pull request created in github which you need to review later to merge it with the master/main branch.
 <br>
 Mohammad Anees Khan (Cryptlex)
