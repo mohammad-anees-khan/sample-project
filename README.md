@@ -18,14 +18,9 @@ git init: used to initialize the git for a local repo, in other words to make a 
 So a typical git workflow would be as:
 <br>
 1. Clone the repo
-<br>
 2. Make the changes
-<br>
 3. Add the changes
-<br>
 4. Commit the changes
-<br>
 5. push the changes
-<br>
 <br>
 Author - Mohammad Anees Khan (cryptlex)
