@@ -1,97 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
   <style>
-    :root {
-      --bg: #f4f4f9;
-      --card: #ffffff;
-      --muted: #e0e0e0;
-      --muted-hover: #d6d6d6;
-      --accent: #4caf50;
-      --accent-hover: #45a049;
-      --shadow: rgba(0, 0, 0, 0.2);
-    }
-    * { box-sizing: border-box; }
     body {
-      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
-      display: grid;
-      place-items: center;
-      background: var(--bg);
-      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
     }
+
     .calculator {
-      background: var(--card);
+      background: #fff;
       padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 10px 24px var(--shadow);
-      width: 340px;
-      max-width: calc(100vw - 32px);
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+      width: 320px;
     }
-    #display {
+
+    .display {
       width: 100%;
-      height: 64px;
-      margin-bottom: 16px;
-      padding: 12px 16px;
+      height: 60px;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
       text-align: right;
-      font-size: 2rem;
-      border: 1px solid #ccc;
+      padding: 10px;
+      border: 2px solid #ccc;
       border-radius: 12px;
-      background: white;
+      background: #f9f9f9;
     }
+
     .buttons {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
+    }
+
+    .buttons button {
       background-color: aquamarine;
-    }
-    button {
-      border: 0;
+      color: black;
+      border: none;
       border-radius: 12px;
-      padding: 18px;
-      font-size: 1.25rem;
-      background: var(--muted);
       cursor: pointer;
-      transition: background 0.2s, transform 0.02s;
-      user-select: none;
+      padding: 20px;
+      font-size: 1.2rem;
+      transition: background 0.3s;
     }
-    button:active { transform: translateY(1px); }
-    button:hover { background: var(--muted-hover); }
-    .equal { background: var(--accent); color: white; }
-    .equal:hover { background: var(--accent-hover); }
-    .span-2 { grid-column: span 2; }
+
+    .buttons button:hover {
+      background-color: mediumaquamarine;
+    }
+
+    .buttons .operator {
+      background-color: lightcoral;
+      color: white;
+    }
+
+    .buttons .operator:hover {
+      background-color: indianred;
+    }
+
+    .buttons .equal {
+      grid-column: span 2;
+      background-color: orange;
+      color: white;
+    }
+
+    .buttons .equal:hover {
+      background-color: darkorange;
+    }
   </style>
 </head>
 <body>
   <div class="calculator">
-    <input id="display" type="text" value="0" readonly />
+    <input type="text" class="display" disabled>
     <div class="buttons">
-      <button onclick="clearDisplay()">C</button>
-      <button onclick="backspace()">⌫</button>
-      <button onclick="appendOperator('/')">÷</button>
-      <button onclick="appendOperator('*')">×</button>
-
-      <button onclick="appendDigit('7')">7</button>
-      <button onclick="appendDigit('8')">8</button>
-      <button onclick="appendDigit('9')">9</button>
-      <button onclick="appendOperator('-')">-</button>
-
-      <button onclick="appendDigit('4')">4</button>
-      <button onclick="appendDigit('5')">5</button>
-      <button onclick="appendDigit('6')">6</button>
-      <button onclick="appendOperator('+')">+</button>
-
-      <button onclick="appendDigit('1')">1</button>
-      <button onclick="appendDigit('2')">2</button>
-      <button onclick="appendDigit('3')">3</button>
-      <button class="equal" onclick="calculate()">=</button>
-
-      <button class="span-2" onclick="appendDigit('0')">0</button>
-      <button onclick="appendDot()">.</button>
-      <button onclick="calculate()" class="equal">=</button>
+      <button>C</button>
+      <button>±</button>
+      <button>%</button>
+      <button class="operator">÷</button>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="operator">×</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button class="operator">−</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button class="operator">+</button>
+      <button>0</button>
+      <button>.</button>
+      <button class="equal">=</button>
     </div>
   </div>
 
